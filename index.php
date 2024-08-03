@@ -16,17 +16,16 @@
         -->
         
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="UTF-8">
         <title>JD Gadina - Astrophotography</title>
         <meta property="og:title" content="JD Gadina - Astrophotography">
-        <meta property="og:site_name" content="JD Gadina - Astrophotography"/>
+        <meta property="og:site_name" content="JD Gadina - Astrophotography">
         <meta name="author" content="Jean-David Gadina">
         <meta name="description" content="Astrophotography by Jean-David Gadina">
         <meta property="og:description" content="Astrophotography by Jean-David Gadina">
         <meta name="keywords" content="gadina, jdgadina, macmade, astro, astronomy, astrophoto, astrophotos, astrophotography, astrophotographer, spacephotography, telescope, telescopes, spaceexploration, nasa, universe, space, deepsky, deepspace, galaxy, galaxies, messier, nebula, solarsystem, planet, planets, moon, lunar, moonphotography, sun, sol, solar, solarphotography">
         <meta name="rating" content="General">
         <meta name="robots" content="all">
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="website">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
         <link rel="icon" href="/favicon.png">
@@ -62,7 +61,7 @@
                                     <i class="bi bi-geo-fill"></i>
                                     Based in Lausanne, Switzerland
                                 </li>
-                            </p>
+                            </ul>
                         </div>
                         <div class="col-sm-4 offset-md-1 py-4">
                             <h4>Contact</h4>

@@ -108,15 +108,15 @@ function Gallery()
     {
         echo '<div class="col">' . chr( 10 );
         echo '    <div class="card shadow-sm">' . chr( 10 );
-        echo '        <img class="rounded" src="/downloads/Preview/' . $image->file . '-Preview.jpg" role="img" alt="' . $image->title . '" aria-label="' . $image->title . '">' . chr( 10 );
+        echo '        <img class="rounded" src="/downloads/Preview/' . $image->file . '-Preview.jpg" alt="' . $image->title . '" aria-label="' . $image->title . '">' . chr( 10 );
         echo '        <div class="card-body">' . chr( 10 );
         echo '            <p class="card-text">' . $image->title . '</p>' . chr( 10 );
         echo '            <div class="d-flex justify-content-between align-items-center">' . chr( 10 );
-        echo '                <button class="btn btn-sm btn-secondary dropdown-toggle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Download">' . chr( 10 );
+        echo '                <button class="btn btn-sm btn-secondary dropdown-toggle d-flex align-items-center" id="download-' . $image->file . '" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Download">' . chr( 10 );
         echo '                    <i class="bi bi-box-arrow-down"></i>' . chr( 10 );
         echo '                    Download' . chr( 10 );
         echo '                </button>' . chr( 10 );
-        echo '                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">' . chr( 10 );
+        echo '                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="download-' . $image->file . '">' . chr( 10 );
         
         DownloadButtons( $image->file );
         
