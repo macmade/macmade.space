@@ -81,7 +81,7 @@ function Gallery()
         echo '        <div class="card-body">';
         echo '            <p class="card-text">' . $image->title . '</p>';
         echo '            <div class="d-flex justify-content-between align-items-center">';        
-        echo '                <button class="btn btn-sm btn-primary dropdown-toggle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Download">';
+        echo '                <button class="btn btn-sm btn-secondary dropdown-toggle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Download">';
         echo '                    <i class="bi bi-box-arrow-down"></i>';
         echo '                    Download';
         echo '                </button>';
