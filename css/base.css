@@ -17,6 +17,11 @@
     background-size:     1320px 200px;
 }
 
+.hero H1, .hero H2
+{
+    text-shadow: 1px 1px #000000;
+}
+
 I.bi
 {
     margin-right: 0.5em;
