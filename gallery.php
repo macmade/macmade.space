@@ -24,6 +24,32 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+function GetFileSize( $file )
+{
+    $size = filesize( $file );
+    
+    if( $size === false )
+    {
+        return "";
+    }
+    else if( $size < 1024 )
+    {
+        return $size . " bytes";
+    }
+    else if( $size < 1024 * 1024 )
+    {
+        return round( $size / 1024, 2 ) . " KB";
+    }
+    else if( $size < 1024 * 1024 * 1024 )
+    {
+        return round( ( $size / 1024 ) / 1024, 2 ) . " MB";
+    }
+    else
+    {
+        return round( ( ( $size / 1024 ) / 1024 ) / 1024, 2 ) . " GB";
+    }
+}
+
 function DownloadButtons( $image )
 {
     $sizes = array
@@ -41,12 +67,17 @@ function DownloadButtons( $image )
     
     foreach( $sizes as $size )
     {
+        $root     = str_replace( $_SERVER[ 'SCRIPT_NAME' ], '', $_SERVER[ 'SCRIPT_FILENAME' ] );
+        $filename = $image . "-" . $size[ 0 ] . ".png";
+        $file     = $root . "/downloads/" . $size[ 0 ] . "/" . $filename;
+        
         echo '<li>';
         echo '    <a href="/download.php?image=' . $image . '&size=' . $size[ 0 ] . '" role="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">';
         echo '        <i class="bi bi-card-image"></i>';
         echo '        <small>';
-        echo '            ' . $size[ 1 ];
-        echo '            <span class="text-body-secondary">&nbsp;' . $size[ 2 ] . '</span>';
+        echo '            <span class="text-warning-emphasis">' . $size[ 1 ] . '</span>';
+        echo '            <span class="text-secondary">&nbsp;' . $size[ 2 ] . '</span>';
+        echo '            <span class="text-info-emphasis">&nbsp;' . GetFileSize( $file ) . '</span>';
         echo '        </small>';
         echo '    </a>';
         echo '</li>';
