@@ -71,16 +71,16 @@ function DownloadButtons( $image )
         $filename = $image . "-" . $size[ 0 ] . ".png";
         $file     = $root . "/downloads/" . $size[ 0 ] . "/" . $filename;
         
-        echo '<li>';
-        echo '    <a href="/download.php?image=' . $image . '&size=' . $size[ 0 ] . '" role="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">';
-        echo '        <i class="bi bi-card-image"></i>';
-        echo '        <small>';
-        echo '            <span class="text-warning-emphasis">' . $size[ 1 ] . '</span>';
-        echo '            <span class="text-secondary">&nbsp;' . $size[ 2 ] . '</span>';
-        echo '            <span class="text-info-emphasis">&nbsp;' . GetFileSize( $file ) . '</span>';
-        echo '        </small>';
-        echo '    </a>';
-        echo '</li>';
+        echo '<li>' . chr( 10 );
+        echo '    <a href="/download.php?image=' . $image . '&size=' . $size[ 0 ] . '" role="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">' . chr( 10 );
+        echo '        <i class="bi bi-card-image"></i>' . chr( 10 );
+        echo '        <small>' . chr( 10 );
+        echo '            <span class="text-warning-emphasis">' . $size[ 1 ] . '</span>' . chr( 10 );
+        echo '            <span class="text-secondary">&nbsp;' . $size[ 2 ] . '</span>' . chr( 10 );
+        echo '            <span class="text-info-emphasis">&nbsp;' . GetFileSize( $file ) . '</span>' . chr( 10 );
+        echo '        </small>' . chr( 10 );
+        echo '    </a>' . chr( 10 );
+        echo '</li>' . chr( 10 );
     }
 }
 
@@ -90,7 +90,7 @@ function Gallery()
     
     if( $json === false )
     {
-        echo '<div>Error: Cannot read gallery.json</div>';
+        echo '<div>Error: Cannot read gallery.json</div>' . chr( 10 );
         
         return;
     }
@@ -99,33 +99,33 @@ function Gallery()
     
     if( $gallery === NULL )
     {
-        echo '<div>Error: Cannot parse gallery.json</div>';
+        echo '<div>Error: Cannot parse gallery.json</div>' . chr( 10 );
         
         return;
     }
     
     foreach( $gallery as $image )
     {
-        echo '<div class="col">';
-        echo '    <div class="card shadow-sm">';
-        echo '        <img class="rounded" src="/downloads/Preview/' . $image->file . '-Preview.jpg" role="img" alt="' . $image->title . '" aria-label="' . $image->title . '">';
-        echo '        <div class="card-body">';
-        echo '            <p class="card-text">' . $image->title . '</p>';
-        echo '            <div class="d-flex justify-content-between align-items-center">';        
-        echo '                <button class="btn btn-sm btn-secondary dropdown-toggle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Download">';
-        echo '                    <i class="bi bi-box-arrow-down"></i>';
-        echo '                    Download';
-        echo '                </button>';
-        echo '                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">';
+        echo '<div class="col">' . chr( 10 );
+        echo '    <div class="card shadow-sm">' . chr( 10 );
+        echo '        <img class="rounded" src="/downloads/Preview/' . $image->file . '-Preview.jpg" role="img" alt="' . $image->title . '" aria-label="' . $image->title . '">' . chr( 10 );
+        echo '        <div class="card-body">' . chr( 10 );
+        echo '            <p class="card-text">' . $image->title . '</p>' . chr( 10 );
+        echo '            <div class="d-flex justify-content-between align-items-center">' . chr( 10 );
+        echo '                <button class="btn btn-sm btn-secondary dropdown-toggle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Download">' . chr( 10 );
+        echo '                    <i class="bi bi-box-arrow-down"></i>' . chr( 10 );
+        echo '                    Download' . chr( 10 );
+        echo '                </button>' . chr( 10 );
+        echo '                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">' . chr( 10 );
         
         DownloadButtons( $image->file );
         
-        echo '                </ul>';
-        echo '                <small class="text-body-secondary text-sm-end">' . $image->date . '</small>';
-        echo '            </div>';
-        echo '        </div>';
-        echo '    </div>';
-        echo '</div>';
+        echo '                </ul>' . chr( 10 );
+        echo '                <small class="text-body-secondary text-sm-end">' . $image->date . '</small>' . chr( 10 );
+        echo '            </div>' . chr( 10 );
+        echo '        </div>' . chr( 10 );
+        echo '    </div>' . chr( 10 );
+        echo '</div>' . chr( 10 );
     }
 }
 
