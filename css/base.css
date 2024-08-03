@@ -11,6 +11,12 @@
 ##################################################
 */
 
+.hero
+{
+    background-image:    url( "/images/hero.jpg" );
+    background-size:     1320px 200px;
+}
+
 I.bi
 {
     margin-right: 0.5em;

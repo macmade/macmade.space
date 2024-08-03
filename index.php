@@ -99,7 +99,7 @@
         
         <main>
             
-            <section class="py-5 text-center container">
+            <section class="py-5 text-center container hero">
                 <div class="row">
                     <div class="col-lg-6 col-md-8 mx-auto">
                         <h1 class="fw-light">JD Gadina</h1>
