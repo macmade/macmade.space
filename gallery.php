@@ -30,7 +30,7 @@ function GetFileSize( $file )
     
     if( $size === false )
     {
-        return "";
+        return "0 bytes";
     }
     else if( $size < 1024 )
     {
@@ -52,6 +52,12 @@ function GetFileSize( $file )
 
 function DownloadButtons( $image )
 {
+    $types = array
+    (
+        array( "png", "PNG 16 Bits" ),
+        array( "jpg", "JPEG 8 Bits" ),
+    );
+    
     $sizes = array
     (
         array( "3.4-3840x2880",        "3:4",        "3840x2880" ),
@@ -67,20 +73,24 @@ function DownloadButtons( $image )
     
     foreach( $sizes as $size )
     {
-        $root     = str_replace( $_SERVER[ 'SCRIPT_NAME' ], '', $_SERVER[ 'SCRIPT_FILENAME' ] );
-        $filename = $image . "-" . $size[ 0 ] . ".png";
-        $file     = $root . "/downloads/" . $size[ 0 ] . "/" . $filename;
-        
-        echo '<li>' . chr( 10 );
-        echo '    <a href="/download.php?image=' . $image . '&size=' . $size[ 0 ] . '" role="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">' . chr( 10 );
-        echo '        <i class="bi bi-card-image"></i>' . chr( 10 );
-        echo '        <small>' . chr( 10 );
-        echo '            <span class="text-warning-emphasis">' . $size[ 1 ] . '</span>' . chr( 10 );
-        echo '            <span class="text-secondary">&nbsp;' . $size[ 2 ] . '</span>' . chr( 10 );
-        echo '            <span class="text-info-emphasis">&nbsp;' . GetFileSize( $file ) . '</span>' . chr( 10 );
-        echo '        </small>' . chr( 10 );
-        echo '    </a>' . chr( 10 );
-        echo '</li>' . chr( 10 );
+        foreach( $types as $type )
+        {
+            $root     = str_replace( $_SERVER[ 'SCRIPT_NAME' ], '', $_SERVER[ 'SCRIPT_FILENAME' ] );
+            $filename = $image . "-" . $size[ 0 ] . "." . $type[ 0 ];
+            $file     = $root . "/downloads/" . $size[ 0 ] . "/" . $filename;
+            
+            echo '<li>' . chr( 10 );
+            echo '    <a href="/download.php?image=' . $image . '&size=' . $size[ 0 ] . '&type=' . $type[ 0 ] . '" role="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">' . chr( 10 );
+            echo '        <i class="bi bi-card-image"></i>' . chr( 10 );
+            echo '        <small>' . chr( 10 );
+            echo '            <span class="text-warning-emphasis">' . $size[ 1 ] . '</span>' . chr( 10 );
+            echo '            <span class="text-secondary">&nbsp;' . $size[ 2 ] . '</span>' . chr( 10 );
+            echo '            <span class="text-info-emphasis">&nbsp;' . $type[ 1 ] . '</span>' . chr( 10 );
+            echo '            <span class="text-secondary">&nbsp;' . GetFileSize( $file ) . '</span>' . chr( 10 );
+            echo '        </small>' . chr( 10 );
+            echo '    </a>' . chr( 10 );
+            echo '</li>' . chr( 10 );
+        }
     }
 }
 

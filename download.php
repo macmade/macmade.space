@@ -24,15 +24,16 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-if( !isset( $_GET[ "image" ] ) || !isset( $_GET[ "size" ] ) )
+if( !isset( $_GET[ "image" ] ) || !isset( $_GET[ "size" ] ) || !isset( $_GET[ "type" ] ) )
 {
     exit( 0 );
 }
 
 $IMAGE    = str_replace( "..", "", $_GET[ "image" ] );
 $SIZE     = str_replace( "..", "", $_GET[ "size" ] );
+$TYPE     = str_replace( "..", "", $_GET[ "type" ] );
 $ROOT     = str_replace( $_SERVER[ 'SCRIPT_NAME' ], '', $_SERVER[ 'SCRIPT_FILENAME' ] );
-$FILENAME = $IMAGE . "-" . $SIZE . ".png";
+$FILENAME = $IMAGE . "-" . $SIZE . "." . $TYPE;
 $FILE     = $ROOT . "/downloads/" . $SIZE . "/" . $FILENAME;
 
 if( !file_exists( $FILE ) )
