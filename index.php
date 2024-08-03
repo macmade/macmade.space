@@ -118,13 +118,17 @@
             
         </main>
         
-        <footer class="text-body-secondary py-5">
+        <footer class="text-body-secondary py-2">
             <div class="container">
-                <p class="float-end mb-1">
-                    <a href="#">Back to top</a>
+                <p class="float-end my-0">
+                    <small><a href="#">Back to top</a></small>
                 </p>
-                <p class="mb-1">Copyright &copy; <?php echo date( 'Y' ); ?> Jean-David Gadina</p>
-                <p class="mb-0">All Rights Reserved</p>
+                <p class="my-0">
+                    <small>
+                        Copyright &copy; <?php echo date( 'Y' ); ?> Jean-David Gadina<br>
+                        All Rights Reserved
+                    </small>
+                </p>
             </div>
         </footer>
         <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
